@@ -10,5 +10,5 @@ app.use("/", router)
 
 dbConnection()
 
-const PORT = 8080
+const PORT = 3000
 app.listen(PORT, () => console.log(`La aplicación está escuchando en el puerto http://localhost:${PORT}`))
