@@ -1,13 +1,13 @@
-const mongoose = require("mongoose") // requerir mongo
-require("dotenv").config() // accede al archivo .env
+const mongoose = require('mongoose')
+require('dotenv').config()
 
 const dbConnection = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI)
-    console.log("BBDD conectada correctamente")
-  } catch (error) {
-    console.error("Error de conexion", error)
+    console.log('Conexión establecida con la BBDD')
+  } catch (err) {
+    console.log(err)
   }
 }
 
-module.exports = dbConnection
+module.exports = dbConnectionion

@@ -1,14 +1,15 @@
-const express = require("express")
+const express = require('express')
 const app = express()
-const dbConnection = require("./config/config.js")
-const router = require("./routes/task")
+const dbConnection = require('./config/config.js')
+const tasksRouter = require('./routes/tasks.js')
+
+const PORT = process.env.PORT || 3000
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}))
 
-app.use("/", router)
+app.use("/", tasksRouter)
 
 dbConnection()
 
-const PORT = 3000
-app.listen(PORT, () => console.log(`La aplicación está escuchando en el puerto http://localhost:${PORT}`))
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
